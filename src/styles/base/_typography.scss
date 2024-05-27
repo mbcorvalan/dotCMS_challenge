@@ -1,0 +1,72 @@
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+
+// Base typography styles
+body {
+    font-family: $primary-font;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $primary-font;
+    font-weight: 700;
+    margin: 1.5rem 0 0.5rem;
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+// Paragraphs
+p {
+    margin: 0 0 1.5rem;
+}
+
+// Links
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Lists
+ul,
+ol {
+    margin: 0 0 1.5rem 1.5rem;
+    padding: 0;
+}
+
+li {
+    margin: 0 0 0.5rem;
+}
