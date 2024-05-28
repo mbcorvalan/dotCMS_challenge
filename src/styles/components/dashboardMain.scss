@@ -1,0 +1,16 @@
+.dashboard {
+    &__main {
+        position: relative;
+        transition: all 0.3s ease;
+
+        &--open {
+            width: calc(100% - 28rem);
+            left: 28rem;
+        }
+
+        &--close {
+            width: calc(100% - 8rem);
+            left: 8rem;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+.dashboard {
+    &__aside {
+        position: fixed;
+        width: 100%;
+        border-right: 1px dashed rgba(145, 158, 171, 0.2);
+        padding: 1.6rem;
+        height: 100%;
+        overflow-y: auto;
+        scrollbar-width: none;
+        transition: max-width 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+        .custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            padding: 1rem;
+            padding-right: 4rem;
+            border: 1px solid #ccc;
+            border-radius: 0.5rem;
+            background-color: white;
+            background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"></path></svg>');
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.6rem 1.6rem;
+            transition: background-position 0.3s, transform 0.3s;
+            width: 100%;
+
+            option {
+                color: $primary-color;
+                font-family: $primary-font;
+                font-weight: 400;
+                font-size: 1.4rem;
+                line-height: 2.4rem;
+            }
+
+            &__container {
+                position: relative;
+            }
+
+            &::-ms-expand {
+                display: none;
+            }
+        }
+
+        .side-menu {
+            &__container {
+                margin: 2rem 0;
+            }
+
+            &__divider {
+                font-size: 1.4rem;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $dark-grey;
+                transition: all 0.3s ease;
+                white-space: nowrap;
+            }
+        }
+
+        &--open {
+            max-width: 28rem;
+
+            .brand__container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 6.4rem;
+                position: sticky;
+                top: 0;
+                left: 0;
+                padding: 0 0.6rem;
+                transition: width 0.3s ease-in-out;
+
+                img {
+                    width: 12.8rem;
+                    max-width: 20rem;
+                    transition: width 0.3s ease-in-out;
+                }
+            }
+
+        }
+
+        &--close {
+            max-width: 8rem;
+            transition: max-width 0.3s ease-in-out;
+
+            .brand__container {
+                min-width: 48px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 6px;
+
+                img {
+                    width: 3.5rem;
+                    transition: width 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}

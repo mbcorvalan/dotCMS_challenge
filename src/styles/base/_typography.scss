@@ -3,13 +3,21 @@
 
 
 // Base typography styles
+
+html {
+    font-size: 10px;
+}
+
 body {
     font-family: $primary-font;
-    font-size: 16px;
     line-height: 1.5;
 }
 
-// Headings
+body {
+    font-family: $primary-font;
+    line-height: 1.5;
+}
+
 h1,
 h2,
 h3,
@@ -46,12 +54,10 @@ h6 {
     font-size: 1rem;
 }
 
-// Paragraphs
 p {
     margin: 0 0 1.5rem;
 }
 
-// Links
 a {
     text-decoration: none;
 
@@ -60,7 +66,6 @@ a {
     }
 }
 
-// Lists
 ul,
 ol {
     margin: 0 0 1.5rem 1.5rem;

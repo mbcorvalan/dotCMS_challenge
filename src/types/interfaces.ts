@@ -32,7 +32,7 @@ interface BlogContent {
 	content: BlogContentElement[];
 }
 
-interface Contentlet {
+export interface Contentlet {
 	pageTitle: string;
 	publishDate: string;
 	postingDate: string;
@@ -87,4 +87,23 @@ interface Contentlet {
 
 export interface ApiResponse {
 	contentlets: Contentlet[];
+}
+
+export interface Option {
+	value: string;
+	label: string;
+}
+
+export interface DateRanges {
+	[key: string]: string;
+}
+
+export interface SidebarState {
+	isOpen: boolean;
+}
+
+export interface NewsState {
+	data: Contentlet[];
+	isLoading: boolean;
+	error: string | null;
 }

@@ -4,33 +4,23 @@
 // Import base styles
 @import 'base/reset';
 @import 'base/typography';
+@import 'base/buttons';
+
 
 /*
-// Import vendors
-@import 'vendors/normalize';
-
-// Import abstracts
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'abstracts/functions';
-
-// Import base styles
-@import 'base/reset';
-@import 'base/typography';
-@import 'base/base';
-
 // Import layout styles
 @import 'layout/grid';
 @import 'layout/header';
 @import 'layout/footer';
 @import 'layout/sidebar';
+**/
 
-// Import component styles
-@import 'components/button';
-@import 'components/card';
-@import 'components/header';
-@import 'components/footer';
+//Import component styles
+@import 'components/navBar';
+@import 'components/dashboardMain';
+@import 'components/dashboardAside';
 
+/**
 // Import page styles
 @import 'pages/home';
 @import 'pages/about';

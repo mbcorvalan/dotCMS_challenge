@@ -1,15 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
-import NavBar from '../components/NavBar';
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 
-export default function AppRouter() {
+/**
+ * Application router component that defines the route structure.
+ * @returns {JSX.Element} The router component.
+ */
+export default function AppRouter(): JSX.Element {
 	return (
-		<>
-			<NavBar />
+		<BrowserRouter>
 			<Routes>
-				{/* Public routes */}
 				<Route path='/' element={<Dashboard />} />
 			</Routes>
-		</>
+		</BrowserRouter>
 	);
 }

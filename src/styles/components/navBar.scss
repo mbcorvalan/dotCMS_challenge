@@ -1,0 +1,51 @@
+.nav {
+    &__container {
+        display: flex;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        min-height: 6.4rem;
+        padding-left: 2.4rem;
+        padding-right: 2.4rem;
+    }
+
+    &__left {
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+
+        .toggle-sidebar {
+            &__container {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__right {
+        display: flex;
+        flex-direction: row;
+        -webkit-box-align: center;
+        align-items: center;
+        cursor: pointer;
+
+        .user {
+            &__container {
+                display: flex;
+                flex-direction: row;
+                -webkit-box-align: center;
+                align-items: center;
+            }
+
+            &__name {
+                margin: 0;
+                font-size: 1.4rem;
+                font-weight: 500;
+                letter-spacing: 0;
+                line-height: 1.75;
+                font-family: Inter, sans-serif;
+                color: inherit;
+            }
+        }
+    }
+}
