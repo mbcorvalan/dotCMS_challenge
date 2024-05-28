@@ -37,6 +37,7 @@ export interface Contentlet {
 	publishDate: string;
 	postingDate: string;
 	metaDescription: string;
+	ogTitle: string;
 	ogType: string;
 	inode: string;
 	host: string;
@@ -111,4 +112,15 @@ export interface NewsState {
 export interface useFetchResult {
 	selectedOption: string;
 	handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export interface LoadingProps {
+	status: boolean;
+	color: string;
+	container: keyof JSX.IntrinsicElements;
+}
+
+export interface ErrorProps {
+	msg: string;
+	container: keyof JSX.IntrinsicElements;
 }

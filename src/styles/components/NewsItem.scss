@@ -1,0 +1,24 @@
+.news-item {
+    display: flex;
+    align-items: center;
+
+    &__image {
+        border-radius: 50%;
+        margin-right: 16px;
+    }
+
+    &__info {
+        &-title {
+            color: $text-body;
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.57143;
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin: 0;
+        }
+    }
+}

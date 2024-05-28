@@ -3,11 +3,66 @@
         position: fixed;
         width: 100%;
         border-right: 1px dashed rgba(145, 158, 171, 0.2);
-        padding: 1.6rem;
+        padding: 1.6rem 0.8rem 1.6rem 1.6rem;
         height: 100%;
         overflow-y: auto;
         scrollbar-width: none;
         transition: max-width 0.3s ease-in-out, padding 0.3s ease-in-out;
+
+        ::-webkit-scrollbar {
+            height: 1rem;
+            width: .5rem
+        }
+
+        ::-webkit-scrollbar-track {
+            background-color: transparent;
+            border-radius: 9999px
+        }
+
+        ::-webkit-scrollbar-thumb {
+            --tw-border-opacity: 1;
+            background-color: hsla(0, 0%, 89%, .8);
+            border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+            border-radius: 9999px;
+            border-width: 3px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgba(227, 227, 227, var(--tw-bg-opacity))
+        }
+
+        ::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        ::-moz-scrollbar {
+            height: 1rem;
+            width: .5rem
+        }
+
+        ::-moz-scrollbar-track {
+            background-color: transparent;
+            border-radius: 9999px
+        }
+
+        ::-moz-scrollbar-thumb {
+            --tw-border-opacity: 1;
+            background-color: hsla(0, 0%, 89%, .8);
+            border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+            border-radius: 9999px;
+            border-width: 1px;
+        }
+
+        ::-moz-scrollbar-thumb:hover {
+            --tw-bg-opacity: 1;
+            background-color: rgba(227, 227, 227, var(--tw-bg-opacity))
+        }
+
+        ::-moz-scrollbar-button {
+            display: none;
+        }
+
 
         .custom-select {
             appearance: none;
@@ -35,6 +90,7 @@
 
             &__container {
                 position: relative;
+                margin-bottom: 3rem;
             }
 
             &::-ms-expand {
@@ -45,6 +101,9 @@
         .side-menu {
             &__container {
                 margin: 2rem 0;
+                height: 40rem;
+                overflow: auto;
+                padding-right: 1rem;
             }
 
             &__divider {
@@ -65,7 +124,6 @@
                 justify-content: center;
                 align-items: center;
                 height: 6.4rem;
-                position: sticky;
                 top: 0;
                 left: 0;
                 padding: 0 0.6rem;
