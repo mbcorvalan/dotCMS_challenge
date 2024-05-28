@@ -9,8 +9,8 @@ import { GetBlogsParams, NewsState, ApiResponse } from '../../types/interfaces';
  */
 export const fetchNews = createAsyncThunk<ApiResponse, GetBlogsParams>(
 	'news/fetchNews',
-	async ({ year, limit, offset }: GetBlogsParams) => {
-		return await getBlogs({ year, limit, offset });
+	async (params: GetBlogsParams) => {
+		return await getBlogs(params);
 	}
 );
 

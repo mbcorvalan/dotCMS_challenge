@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
 import { options } from '../config/constants';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store/store';
+import { useFetch } from '../hooks/useFetch';
 
 export default function DashboardAside() {
-    const [selectedOption, setSelectedOption] = useState<string>(options[0].value);
 
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSelectedOption(event.target.value);
-    };
+    const { selectedOption, handleChange } = useFetch();
 
     const isOpen = useSelector((state: RootState) => state.sideBar.isOpen);
     const asideClass = isOpen ? 'dashboard__aside dashboard__aside--close' : 'dashboard__aside dashboard__aside--open';

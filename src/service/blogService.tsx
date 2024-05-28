@@ -8,6 +8,7 @@ import { GetBlogsParams, ApiResponse } from '../types/interfaces';
  * @returns {Promise<ApiResponse>} The response containing the blogs data.
  */
 export const getBlogs = async ({ year, limit, offset }: GetBlogsParams): Promise<ApiResponse> => {
+
     const sysPublishDate = DATE_RANGES[year] || '';
 
     const url = sysPublishDate

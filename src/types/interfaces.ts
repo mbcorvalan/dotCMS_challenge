@@ -107,3 +107,8 @@ export interface NewsState {
 	isLoading: boolean;
 	error: string | null;
 }
+
+export interface useFetchResult {
+	selectedOption: string;
+	handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}

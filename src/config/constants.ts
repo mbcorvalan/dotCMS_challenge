@@ -12,7 +12,8 @@ export const DATE_RANGES: DateRanges = {
 
 export const options: Option[] = [
 	{ value: '', label: 'Filter' },
-	{ value: 'option1', label: 'Option 1' },
-	{ value: 'option2', label: 'Option 2' },
-	{ value: 'option3', label: 'Option 3' },
+	{ value: '2023', label: '2023' },
+	{ value: '2022', label: '2022' },
+	{ value: '2021', label: '2021' },
+	{ value: '2020', label: '2020' },
 ];
