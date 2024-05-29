@@ -7,18 +7,16 @@ import Loading from './Loading';
 import ErrorMsg from './ErrorMsg';
 import NewsItem from './NewsItem';
 
+
 const DashboardAside = () => {
-    const { selectedOption, handleChange } = useFetch();
+    const { selectedOption, handleChange, } = useFetch();
 
     const isOpen = useSelector((state: RootState) => state.sideBar.isOpen);
     const news = useSelector((state: RootState) => state.news.data);
     const newsStatus = useSelector((state: RootState) => state.news.isLoading);
     const newsError = useSelector((state: RootState) => state.news.error);
-
-    console.log(news);
-
     const asideClass = isOpen ? 'dashboard__aside dashboard__aside--close' : 'dashboard__aside dashboard__aside--open';
-    console.log(news.length);
+
     return (
         <aside className={asideClass}>
             <a className="brand__container" href="/">

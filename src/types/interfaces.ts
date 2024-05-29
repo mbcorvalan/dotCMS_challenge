@@ -95,6 +95,12 @@ export interface Option {
 	label: string;
 }
 
+export interface PaginationProps {
+	currentPage: number;
+	totalPages: number;
+	onPageChange: (page: number) => void;
+}
+
 export interface DateRanges {
 	[key: string]: string;
 }
