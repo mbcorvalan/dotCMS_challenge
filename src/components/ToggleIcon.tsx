@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { toggleSidebar, closeSidebar } from '../redux/reducers/sideBarReducer';
 import { useDebounce } from 'use-debounce';

@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux';
+import React, { useSelector } from 'react-redux';
 import { RootState } from '../redux/store/store';
 import Loading from './Loading';
 import ErrorMsg from './ErrorMsg';
@@ -12,7 +12,6 @@ const NewsList = () => {
     if (newsStatus) return <Loading status={newsStatus} color="#c336e5" container="li" />;
     if (newsError) return <ErrorMsg msg={newsError} container="li" />;
     if (!news.length) return <ErrorMsg msg="No news available" container="li" />;
-
     return (
         <>
             {news.map((item) => (

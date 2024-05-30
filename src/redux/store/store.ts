@@ -1,13 +1,15 @@
 import { configureStore } from '@reduxjs/toolkit';
 import sideBarSlice from '../reducers/sideBarReducer';
-import newsSlice from '../reducers/newsReducer';
+import newsSlice from '../reducers/fetchNewsReducer';
 import newsCountSlice from '../reducers/newsCountReducer';
+import selectedNewsSlice from '../reducers/fetchSelectedNews';
 
 const store = configureStore({
 	reducer: {
 		sideBar: sideBarSlice,
 		news: newsSlice,
 		newsCount: newsCountSlice,
+		selectedNews: selectedNewsSlice,
 	},
 });
 

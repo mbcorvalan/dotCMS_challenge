@@ -12,5 +12,21 @@
             width: calc(100% - 8rem);
             left: 8rem;
         }
+
+        .main__content {
+            @include flexBox(row, center, center);
+
+            &.hidden {
+                display: none;
+            }
+
+            @include md {
+                @include flexBox(row, center, center);
+
+                &.hidden {
+                    @include flexBox(row, center, center);
+                }
+            }
+        }
     }
 }

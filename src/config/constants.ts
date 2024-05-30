@@ -1,6 +1,11 @@
-import { Option, DateRanges, NewsState } from '../types/interfaces';
+import {
+	Option,
+	DateRanges,
+	NewsState,
+	NewsSelectedState,
+} from '../types/interfaces';
 
-export const BASE_URL: string = 'https://demo.dotcms.com/api/content/query';
+export const BASE_URL: string = 'https://demo.dotcms.com/api/content';
 export const LANGUAGE_ID: number = 1;
 
 export const LIMIT_PER_PAGE: number = 5;
@@ -24,4 +29,11 @@ export const initialState: NewsState = {
 	data: [],
 	isLoading: false,
 	error: null,
+};
+
+export const selectedNewsInitialState: NewsSelectedState = {
+	data: [],
+	isLoading: false,
+	error: null,
+	id: '',
 };

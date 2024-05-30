@@ -8,6 +8,10 @@ export interface GetBlogs {
 	year: string;
 }
 
+export interface SelectedNews {
+	id: string;
+}
+
 interface ImageMetaData {
 	modDate: number;
 	sha256: string;
@@ -117,6 +121,13 @@ export interface NewsState {
 	data: Contentlet[];
 	isLoading: boolean;
 	error: string | null;
+}
+
+export interface NewsSelectedState {
+	data: Contentlet[];
+	isLoading: boolean;
+	error: string | null;
+	id: string;
 }
 
 export interface useFetchResult {

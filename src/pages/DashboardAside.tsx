@@ -1,31 +1,29 @@
-import { memo, useEffect } from 'react';
+import React, { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../redux/store/store';
 import { useFilterData } from '../hooks/useFilterData';
 import { useFetch } from '../hooks/useFetch';
 import { usePagination } from '../hooks/usePagination';
+import { useSidebarState } from '../hooks/useSidebarState';
+import { useNavigation } from '../hooks/useNavigation';
 import NewsList from '../components/NewsList';
 import SelectOption from '../components/SelectOption';
 import PaginationControls from '../components/PaginationControls';
 import CreateButton from '../components/CreateButton';
-import { useNavigate } from 'react-router-dom';
 
-const DashboardAside = () => {
-    const newsId = "2b100ac7-07b1-48c6-8270-dc01ff958c69";
-    const navigate = useNavigate();
+const DashboardAside: React.FC = () => {
     const { selectedOption, handleChange } = useFilterData();
     const allNewsCount = useSelector((state: RootState) => state.newsCount.data.length);
+    const selectedNews = useSelector((state: RootState) => state.selectedNews.id);
     const { nextPage, prevPage, currentPage, totalPagesCount, offset } = usePagination(selectedOption, allNewsCount);
-    const { handleSubmit } = useFetch(selectedOption, offset);
+    const { handleSubmit } = useFetch(selectedOption, offset, selectedNews);
+    const { isOpen, asideClass } = useSidebarState();
 
     useEffect(() => {
         handleSubmit();
-        navigate(`/news/${newsId}`);
-    }, [selectedOption, offset, handleSubmit, newsId]);
+    }, [selectedOption, offset, selectedNews, handleSubmit]);
 
-    const isOpen = useSelector((state: RootState) => state.sideBar.isOpen);
-
-    const asideClass = isOpen ? 'dashboard__aside dashboard__aside--open' : 'dashboard__aside dashboard__aside--close';
+    useNavigation();
 
     return (
         <aside className={asideClass}>
