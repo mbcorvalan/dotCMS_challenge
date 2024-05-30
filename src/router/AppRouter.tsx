@@ -1,5 +1,7 @@
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import Dashboard from '../pages/Dashboard';
+import DashboardMain from '../pages/DashboardMain';
+import DashboardAside from '../pages/DashboardAside';
+
 
 /**
  * Application router component that defines the route structure.
@@ -8,8 +10,9 @@ import Dashboard from '../pages/Dashboard';
 export default function AppRouter(): JSX.Element {
 	return (
 		<BrowserRouter>
+			<DashboardAside />
 			<Routes>
-				<Route path='/' element={<Dashboard />} />
+				<Route path='/news/:newsId' element={<DashboardMain />} />
 			</Routes>
 		</BrowserRouter>
 	);

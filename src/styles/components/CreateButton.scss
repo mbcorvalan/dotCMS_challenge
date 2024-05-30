@@ -1,0 +1,7 @@
+.createBtn {
+    &__container {
+        cursor: pointer;
+        @include flexBox(row, center, center);
+        margin: 2rem 0;
+    }
+}

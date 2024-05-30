@@ -13,7 +13,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({ currentPage, to
     return (
         <div className='pagination-controls__container'>
             <button
-                className='btn btn-primary'
+                className='btn btn-secondary'
                 onClick={prevPage}
                 disabled={currentPage <= 1}
             >
@@ -23,7 +23,7 @@ const PaginationControls: React.FC<PaginationControlsProps> = ({ currentPage, to
                 Page {currentPage} of {totalPagesCount}
             </span>
             <button
-                className='btn btn-primary'
+                className='btn btn-secondary'
                 onClick={nextPage}
                 disabled={currentPage >= totalPagesCount}
             >

@@ -7,7 +7,6 @@ const initialState: SidebarState = {
 	isOpen: !isMobileScreen,
 };
 
-console.log(isMobileScreen);
 const sideBarSlice = createSlice({
 	name: 'sidebar',
 	initialState,

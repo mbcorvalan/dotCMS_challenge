@@ -4,11 +4,15 @@ import { RootState } from '../redux/store/store';
 import { useFilterData } from '../hooks/useFilterData';
 import { useFetch } from '../hooks/useFetch';
 import { usePagination } from '../hooks/usePagination';
-import NewsList from './NewsList';
-import SelectOption from './SelectOption';
-import PaginationControls from './PaginationControls';
+import NewsList from '../components/NewsList';
+import SelectOption from '../components/SelectOption';
+import PaginationControls from '../components/PaginationControls';
+import CreateButton from '../components/CreateButton';
+import { useNavigate } from 'react-router-dom';
 
 const DashboardAside = () => {
+    const newsId = "2b100ac7-07b1-48c6-8270-dc01ff958c69";
+    const navigate = useNavigate();
     const { selectedOption, handleChange } = useFilterData();
     const allNewsCount = useSelector((state: RootState) => state.newsCount.data.length);
     const { nextPage, prevPage, currentPage, totalPagesCount, offset } = usePagination(selectedOption, allNewsCount);
@@ -16,7 +20,8 @@ const DashboardAside = () => {
 
     useEffect(() => {
         handleSubmit();
-    }, [selectedOption, offset, handleSubmit]);
+        navigate(`/news/${newsId}`);
+    }, [selectedOption, offset, handleSubmit, newsId]);
 
     const isOpen = useSelector((state: RootState) => state.sideBar.isOpen);
 
@@ -40,6 +45,7 @@ const DashboardAside = () => {
                         prevPage={prevPage}
                         nextPage={nextPage}
                     />
+                    <CreateButton />
                 </>
             )}
         </aside>

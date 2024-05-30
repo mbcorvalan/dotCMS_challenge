@@ -1,7 +1,6 @@
 .pagination-controls {
     &__container {
-        @include flexBox(row, center, center);
-        gap: 0.8rem;
+        @include flexBox(row, space-between, center);
     }
 
     &__text {
