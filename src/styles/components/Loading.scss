@@ -1,6 +1,4 @@
 .loading__container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexBox(row, center, center);
     margin: 2rem 0;
 }

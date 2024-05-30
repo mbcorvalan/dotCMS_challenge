@@ -1,0 +1,12 @@
+.pagination-controls {
+    &__container {
+        @include flexBox(row, center, center);
+        gap: 0.8rem;
+    }
+
+    &__text {
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: $text-body;
+    }
+}

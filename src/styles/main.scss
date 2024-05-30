@@ -1,5 +1,6 @@
 // Import abstracts
 @import 'abstracts/variables';
+@import 'abstracts/mixins';
 
 // Import base styles
 @import 'base/reset';
@@ -21,7 +22,8 @@
 @import 'components/dashboardAside';
 @import 'components/loading';
 @import 'components/errorMsg';
-@import 'components/newsItem.scss';
+@import 'components/newsItem';
+@import 'components/paginationControls';
 
 /**
 // Import page styles

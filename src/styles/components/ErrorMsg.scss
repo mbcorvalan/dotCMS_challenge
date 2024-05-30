@@ -8,9 +8,7 @@
         line-height: 1.43;
         letter-spacing: 0.01071em;
         display: -ms-flexbox;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexBox(row, center, center);
         padding: 6px 16px;
         color: rgb(95, 33, 32);
         background-color: rgb(253, 237, 237);

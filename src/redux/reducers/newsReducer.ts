@@ -1,10 +1,12 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { getBlogs } from '../../service/blogService';
-import { GetBlogsParams, NewsState, ApiResponse } from '../../types/interfaces';
+import { GetBlogsParams, ApiResponse } from '../../types/interfaces';
+import { initialState } from '../../config/constants';
 
 /**
  * Thunk for fetching news data.
- * @param {GetBlogsParams} params - The parameters for fetching news.
+ * @param {GetBlogs} paramsCount - The parameters for fetching news.
+ * * @param {GetBlogsParams} params - The parameters for fetching news.
  * @returns {Promise<ApiResponse>} The response containing the news data.
  */
 export const fetchNews = createAsyncThunk<ApiResponse, GetBlogsParams>(
@@ -13,12 +15,6 @@ export const fetchNews = createAsyncThunk<ApiResponse, GetBlogsParams>(
 		return await getBlogs(params);
 	}
 );
-
-const initialState: NewsState = {
-	data: [],
-	isLoading: false,
-	error: null,
-};
 
 const newsSlice = createSlice({
 	name: 'news',

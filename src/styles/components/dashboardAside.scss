@@ -81,7 +81,7 @@
             width: 100%;
 
             option {
-                color: $primary-color;
+                color: $secondary-color;
                 font-family: $primary-font;
                 font-weight: 400;
                 font-size: 1.4rem;
@@ -101,8 +101,8 @@
         .side-menu {
             &__container {
                 margin: 2rem 0;
-                height: 40rem;
-                overflow: auto;
+                max-height: 40rem;
+                overflow-y: auto;
                 padding-right: 1rem;
             }
 

@@ -1,27 +1,27 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchNews } from '../redux/reducers/newsReducer';
+import { fetchCountNews } from '../redux/reducers/newsCountReducer';
 import { AppDispatch } from '../redux/store/store';
-import { useFetchResult } from '../types/interfaces';
+import { LIMIT_PER_PAGE } from '../config/constants';
 
-export const useFetch = (): useFetchResult => {
-	const [selectedOption, setSelectedOption] = useState<string>('');
+export const useFetch = (selectedOption: string = '', offset: number = 0) => {
 	const dispatch: AppDispatch = useDispatch();
 
-	const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-		setSelectedOption(event.target.value);
-	};
-
-	const handleSubmit = useCallback(() => {
-		dispatch(fetchNews({ year: selectedOption, limit: 10, offset: 0 }));
-	}, [dispatch, selectedOption]);
-
-	useEffect(() => {
-		handleSubmit();
-	}, [selectedOption, handleSubmit]);
+	const handleSubmit = useCallback(async () => {
+		try {
+			await Promise.all([
+				dispatch(fetchCountNews({ year: selectedOption })),
+				dispatch(
+					fetchNews({ year: selectedOption, limit: LIMIT_PER_PAGE, offset })
+				),
+			]);
+		} catch (error) {
+			console.error('Error fetching data:', error);
+		}
+	}, [dispatch, selectedOption, offset]);
 
 	return {
-		selectedOption,
-		handleChange,
+		handleSubmit,
 	};
 };

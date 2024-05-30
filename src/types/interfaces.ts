@@ -4,6 +4,10 @@ export interface GetBlogsParams {
 	offset: number;
 }
 
+export interface GetBlogs {
+	year: string;
+}
+
 interface ImageMetaData {
 	modDate: number;
 	sha256: string;
@@ -34,10 +38,10 @@ interface BlogContent {
 
 export interface Contentlet {
 	pageTitle: string;
+	ogTitle: string;
 	publishDate: string;
 	postingDate: string;
 	metaDescription: string;
-	ogTitle: string;
 	ogType: string;
 	inode: string;
 	host: string;
@@ -116,8 +120,7 @@ export interface NewsState {
 }
 
 export interface useFetchResult {
-	selectedOption: string;
-	handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+	handleSubmit: () => void;
 }
 
 export interface LoadingProps {

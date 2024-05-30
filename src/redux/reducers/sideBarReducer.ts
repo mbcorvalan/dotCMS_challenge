@@ -1,10 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { SidebarState } from '../../types/interfaces';
 
+const isMobileScreen = window.innerWidth < 768;
+
 const initialState: SidebarState = {
-	isOpen: false,
+	isOpen: !isMobileScreen,
 };
 
+console.log(isMobileScreen);
 const sideBarSlice = createSlice({
 	name: 'sidebar',
 	initialState,
@@ -13,14 +16,14 @@ const sideBarSlice = createSlice({
 		 * Toggle the sidebar open state.
 		 * @param {SidebarState} state - The current state of the sidebar.
 		 */
-		toggleSidebar: (state) => {
+		toggleSidebar: (state: SidebarState) => {
 			state.isOpen = !state.isOpen;
 		},
 		/**
 		 * Close the sidebar.
 		 * @param {SidebarState} state - The current state of the sidebar.
 		 */
-		closeSidebar: (state) => {
+		closeSidebar: (state: SidebarState) => {
 			state.isOpen = false;
 		},
 	},

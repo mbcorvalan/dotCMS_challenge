@@ -1,19 +1,14 @@
 .nav {
     &__container {
-        display: flex;
-        flex-direction: row;
         -webkit-box-pack: justify;
-        justify-content: space-between;
+        @include flexBox(row, space-between, center);
         min-height: 6.4rem;
         padding-left: 2.4rem;
         padding-right: 2.4rem;
     }
 
     &__left {
-        display: flex;
-        flex-direction: row;
-        -webkit-box-align: center;
-        align-items: center;
+        @include flexBox(row, center, center);
 
         .toggle-sidebar {
             &__container {
@@ -23,18 +18,23 @@
     }
 
     &__right {
-        display: flex;
-        flex-direction: row;
-        -webkit-box-align: center;
-        align-items: center;
-        cursor: pointer;
+        @include flexBox(row, center, center);
+
+        &.hidden {
+            display: none;
+        }
+
+        @include md {
+            @include flexBox(row, center, center);
+
+            &.hidden {
+                @include flexBox(row, center, center);
+            }
+        }
 
         .user {
             &__container {
-                display: flex;
-                flex-direction: row;
-                -webkit-box-align: center;
-                align-items: center;
+                @include flexBox(row, center, center);
             }
 
             &__name {
@@ -43,8 +43,7 @@
                 font-weight: 500;
                 letter-spacing: 0;
                 line-height: 1.75;
-                font-family: Inter, sans-serif;
-                color: inherit;
+                color: $secondary-color;
             }
         }
     }

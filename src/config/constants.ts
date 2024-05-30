@@ -1,7 +1,9 @@
-import { Option, DateRanges } from '../types/interfaces';
+import { Option, DateRanges, NewsState } from '../types/interfaces';
 
 export const BASE_URL: string = 'https://demo.dotcms.com/api/content/query';
 export const LANGUAGE_ID: number = 1;
+
+export const LIMIT_PER_PAGE: number = 5;
 
 export const DATE_RANGES: DateRanges = {
 	'2023': '%5B20230101140000 TO 20231231160000%5D',
@@ -17,3 +19,9 @@ export const options: Option[] = [
 	{ value: '2021', label: '2021' },
 	{ value: '2020', label: '2020' },
 ];
+
+export const initialState: NewsState = {
+	data: [],
+	isLoading: false,
+	error: null,
+};
