@@ -1,6 +1,10 @@
-# Getting Started with Create React App
+# dotCMS Frontend Challenge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for the frontend challenge provided by dotCMS. It is designed to showcase React-based web development skills, including the use of Redux for state management and various React hooks for effective UI rendering and state transitions.
+
+## Project Overview
+
+The project is a simple news management system that allows users to view, filter, and post news items through a user-friendly web interface. It utilizes dotCMS as the backend, demonstrating how to interact with its REST API to fetch and manipulate news content.
 
 ## Available Scripts
 
