@@ -4,7 +4,14 @@ import { toggleSidebar, closeSidebar } from '../redux/reducers/sideBarReducer';
 import { useDebounce } from 'use-debounce';
 import { IoMenuOutline } from "react-icons/io5";
 
-const ToggleIcon = () => {
+/**
+ * ToggleIcon component provides a button to toggle the sidebar.
+ * It automatically closes the sidebar when the window is resized to a width of 768 pixels or less,
+ * debouncing the resize event handler to improve performance.
+ * 
+ * @returns {React.ReactElement} A button element with an icon that toggles the sidebar state.
+ */
+const ToggleIcon: React.FC = () => {
     const dispatch = useDispatch();
 
     const handleResize = useCallback(() => {
@@ -16,7 +23,7 @@ const ToggleIcon = () => {
     const [debouncedHandleResize] = useDebounce(handleResize, 300);
 
     useEffect(() => {
-        handleResize();
+        handleResize(); // Call once on mount to ensure correct sidebar state
 
         window.addEventListener('resize', debouncedHandleResize);
         return () => {
@@ -27,7 +34,6 @@ const ToggleIcon = () => {
     const handleSetSidebar = () => {
         dispatch(toggleSidebar());
     };
-
 
     return (
         <button className='btn' onClick={handleSetSidebar}>

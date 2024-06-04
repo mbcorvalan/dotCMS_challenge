@@ -17,12 +17,8 @@ export const fetchSelectedNews = createAsyncThunk<ApiResponse, SelectedNews>(
 
 const selectedNewsSlice = createSlice({
 	name: 'selectedNews',
-	initialState: { ...selectedNewsInitialState, id: '' },
-	reducers: {
-		setSelectedNewsId: (state, action: PayloadAction<string>) => {
-			state.id = action.payload;
-		},
-	},
+	initialState: selectedNewsInitialState,
+	reducers: {},
 	extraReducers: (builder) => {
 		builder
 			.addCase(fetchSelectedNews.pending, (state) => {
@@ -43,7 +39,5 @@ const selectedNewsSlice = createSlice({
 			});
 	},
 });
-
-export const { setSelectedNewsId } = selectedNewsSlice.actions;
 
 export default selectedNewsSlice.reducer;

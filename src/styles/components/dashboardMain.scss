@@ -13,7 +13,7 @@
             left: 8rem;
         }
 
-        .main__content {
+        .main__container {
             @include flexBox(row, center, center);
 
             &.hidden {
@@ -28,5 +28,18 @@
                 }
             }
         }
+
+        .main__content {
+            overflow: hidden;
+            flex-grow: 1;
+            margin: 0 auto;
+            position: relative;
+            width: 100%;
+
+            @include md {
+                max-width: 120.7rem;
+            }
+        }
+
     }
 }

@@ -1,0 +1,141 @@
+.create-news-form {
+    &__container {
+        width: 100%;
+        padding: 2rem;
+
+        @include md {
+            padding: 0 2rem;
+        }
+
+        .react-datepicker {
+            &-wrapper {
+                width: 100% !important;
+
+                input {
+                    @include input;
+                }
+
+            }
+
+            &-popper {
+                left: 0.7rem !important;
+            }
+
+            &__current-month {
+                margin-bottom: 0.6rem;
+            }
+
+            &__current-month,
+            &-time__header {
+                font-size: 1.5rem !important;
+                font-weight: 500 !important;
+                color: $text-body !important;
+            }
+        }
+    }
+
+    &__label {
+        color: $text-body;
+        margin: 1.2rem 0;
+        font-weight: 500;
+        display: block;
+        font-size: 1.5rem;
+
+        &-required {
+            color: red;
+        }
+    }
+
+    &__textarea,
+    &__input {
+        appearance: none;
+        background-color: rgb(245, 248, 250);
+        border-bottom-color: rgb(203, 214, 226);
+        border-bottom-left-radius: 3px;
+        border-bottom-right-radius: 3px;
+        border-bottom-style: solid;
+        border-bottom-width: 1px;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+        border-image-slice: 100%;
+        border-image-source: none;
+        border-image-width: 1;
+        border-left-color: rgb(203, 214, 226);
+        border-left-style: solid;
+        border-left-width: 1px;
+        border-right-color: rgb(203, 214, 226);
+        border-right-style: solid;
+        border-right-width: 1px;
+        border-top-color: rgb(203, 214, 226);
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        border-top-style: solid;
+        border-top-width: 1px;
+        box-sizing: border-box;
+        color: rgb(51, 71, 91);
+        cursor: text;
+        display: inline-block;
+        font-feature-settings: normal;
+        font-kerning: auto;
+        font-optical-sizing: auto;
+        font-size: 16px;
+        font-stretch: 100%;
+        font-style: normal;
+        font-variant-alternates: normal;
+        font-variant-caps: normal;
+        font-variant-east-asian: normal;
+        font-variant-ligatures: normal;
+        font-variant-numeric: normal;
+        font-variant-position: normal;
+        font-variation-settings: normal;
+        font-weight: 400;
+        height: 40px;
+        letter-spacing: normal;
+        line-height: 22px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+        margin-right: 0px;
+        margin-top: 0px;
+        min-height: 27px;
+        padding-block-end: 0px;
+        padding-block-start: 0px;
+        padding-bottom: 0px;
+        padding-inline-end: 15px;
+        padding-inline-start: 15px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-top: 0px;
+        text-align: start;
+        text-indent: 0px;
+        text-rendering: auto;
+        text-shadow: none;
+        text-transform: none;
+        width: 100%;
+        word-spacing: 0px;
+        -webkit-rtl-ordering: logical;
+        -webkit-border-image: none;
+
+    }
+
+    &__textarea {
+        height: 6.6rem;
+    }
+
+    &__button {
+        @include flexBox(row, center, center);
+        gap: 1rem;
+        margin: 2rem 0;
+    }
+
+    &__label-info {
+        font-size: 1.2rem;
+        color: $text-body;
+        margin-bottom: 0.5rem;
+    }
+
+    &__error {
+        color: red;
+        font-size: 1.2rem;
+        margin-top: 0.5rem;
+    }
+}

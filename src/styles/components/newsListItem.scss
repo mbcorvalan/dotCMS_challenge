@@ -1,0 +1,45 @@
+.news-list-item {
+    @include flexBox(row, center, center);
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInDown 0.5s ease forwards;
+
+    @keyframes fadeInDown {
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    &__image {
+        &-container {
+            width: 40px;
+            height: 40px;
+            margin-right: 16px;
+            @include flexBox(row, center, center);
+        }
+
+        border-radius: 50%;
+    }
+
+    &__info {
+        &-title {
+            color: $text-body;
+            width: 100%;
+            max-width: 100%;
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin: 0 0 0.5rem 0;
+        }
+
+        &-date-post {
+            color: $dark-grey;
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+}

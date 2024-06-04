@@ -11,7 +11,6 @@ export interface GetBlogs {
 export interface SelectedNews {
 	id: string;
 }
-
 interface ImageMetaData {
 	modDate: number;
 	sha256: string;
@@ -38,6 +37,13 @@ interface BlogContentElement {
 interface BlogContent {
 	type: string;
 	content: BlogContentElement[];
+}
+
+export interface NewsData {
+	postingDate: string;
+	title: string;
+	inode: string;
+	ogDescription: string;
 }
 
 export interface Contentlet {
@@ -98,6 +104,10 @@ export interface ApiResponse {
 	contentlets: Contentlet[];
 }
 
+export interface GetBlogsResponse {
+	status: number;
+}
+
 export interface Option {
 	value: string;
 	label: string;
@@ -140,7 +150,79 @@ export interface LoadingProps {
 	container: keyof JSX.IntrinsicElements;
 }
 
-export interface ErrorProps {
+export interface NotificationMsgProps {
 	msg: string;
 	container: keyof JSX.IntrinsicElements;
+	type: string;
+}
+
+interface InputFieldConfig {
+	type: 'input';
+}
+
+interface TextareaFieldConfig {
+	type: 'textarea';
+}
+
+interface DateFieldConfig {
+	type: 'date';
+}
+export interface FormConfig {
+	title: InputFieldConfig;
+	publishDate: DateFieldConfig;
+	body: TextareaFieldConfig;
+	categories: InputFieldConfig;
+	tags: InputFieldConfig;
+}
+
+export interface SelectOptionProps {
+	selectedOption: string;
+	handleChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
+}
+
+export interface PostNewsParams {
+	title: string;
+	publishDate: string;
+	postingDate: string;
+	body: string;
+	categories: string;
+	tags: string;
+	contentType: string;
+	urlTitle: string;
+	contentHost: string;
+}
+
+export interface PaginationControlsProps {
+	currentPage: number;
+	totalPagesCount: number;
+	prevPage: () => void;
+	nextPage: () => void;
+}
+
+export interface PostNewsState {
+	status: 'idle' | 'loading' | 'succeeded' | 'failed';
+	error: string | null;
+}
+
+export interface FormData {
+	title: string;
+	publishDate: string;
+	postingDate: string;
+	body: string;
+	categories: string;
+	tags: string;
+	contentType: string;
+	urlTitle: string;
+	contentHost: string;
+}
+
+export interface FormFieldProps {
+	label: string;
+	name: string;
+	value: string;
+	onChange: (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => void;
+	error?: string | null;
+	isTextArea?: boolean;
 }

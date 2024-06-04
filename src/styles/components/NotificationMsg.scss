@@ -1,4 +1,4 @@
-.error-msg {
+.notification-msg {
     &__container {
         transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         border-radius: 4px;
@@ -10,8 +10,16 @@
         display: -ms-flexbox;
         @include flexBox(row, center, center);
         padding: 6px 16px;
-        color: rgb(95, 33, 32);
-        background-color: rgb(253, 237, 237);
+
+        &--succeeded {
+            color: rgb(30, 70, 32);
+            background-color: rgb(237, 247, 237);
+        }
+
+        &--failed {
+            color: rgb(95, 33, 32);
+            background-color: rgb(253, 237, 237);
+        }
 
     }
 }

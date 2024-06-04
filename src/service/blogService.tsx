@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { BASE_URL, LANGUAGE_ID, DATE_RANGES } from '../config/constants';
-import { GetBlogsParams, ApiResponse, GetBlogs, SelectedNews } from '../types/interfaces';
+import { GetBlogsParams, ApiResponse, GetBlogs, SelectedNews, PostNewsParams } from '../types/interfaces';
 
 /**
  * Fetch blogs based on the provided parameters.
@@ -50,5 +50,22 @@ export const getSelectedBlogs = async ({ id }: SelectedNews): Promise<ApiRespons
         return response.data;
     } catch (error) {
         throw new Error('Failed to fetch blogs');
+    }
+};
+
+
+
+export const postNewNews = async (newsData: PostNewsParams): Promise<number> => {
+    const url = `${BASE_URL}/publish/1`;
+    try {
+        const response = await axios.post(url, newsData, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Basic ' + btoa('admin@dotcms.com:admin')
+            }
+        });
+        return response.status;
+    } catch (error) {
+        throw new Error('Failed to create news');
     }
 };

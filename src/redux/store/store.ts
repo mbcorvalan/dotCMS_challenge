@@ -3,6 +3,7 @@ import sideBarSlice from '../reducers/sideBarReducer';
 import newsSlice from '../reducers/fetchNewsReducer';
 import newsCountSlice from '../reducers/newsCountReducer';
 import selectedNewsSlice from '../reducers/fetchSelectedNews';
+import postNewsSlice from '../reducers/postNewsReducer';
 
 const store = configureStore({
 	reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
 		news: newsSlice,
 		newsCount: newsCountSlice,
 		selectedNews: selectedNewsSlice,
+		postNews: postNewsSlice,
 	},
 });
 

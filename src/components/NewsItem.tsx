@@ -1,33 +1,32 @@
 import React from 'react';
-import { Contentlet } from '../types/interfaces';
-import { useDispatch } from 'react-redux';
-import { setSelectedNewsId } from '../redux/reducers/fetchSelectedNews';
+import { useSelector } from 'react-redux';
+import { RootState } from '../redux/store/store';
+import { formatDate } from '../config/constants';
+import { NewsData } from '../types/interfaces';
 
-function extractDate(dateTimeString: string) {
-    return dateTimeString.split(' ')[0];
-}
+/**
+ * NewsItem component displays detailed information about a specific news item.
+ * It includes a breadcrumb with the posting date, the title, an image, and a description of the news.
+ *
+ * @returns A React component that displays a single news item.
+ */
+export default function NewsItem() {
+    const singleNews = useSelector((state: RootState) => state.selectedNews.data[0] as NewsData | undefined);
 
-const NewsItem: React.FC<{ news: Contentlet; }> = ({ news }) => {
-    const dateOnly = extractDate(news.postingDate);
-
-    const dispatch = useDispatch();
-
-    const handleClick = (newsId: string) => {
-        dispatch(setSelectedNewsId(newsId));
-    };
     return (
-        <li className="news-item" key={news.postingDate}>
-            <button className="btn" onClick={() => handleClick(news.identifier)}>
-                <div className="news-item__image-container">
-                    <img loading="lazy" className="news-item__image" src={`https://demo.dotcms.com/dA/${news.inode}/40w/40h`} alt={news.pageTitle || news.ogTitle} />
-                </div>
-                <div className="news-item__info-container">
-                    <h3 className="news-item__info-title">{news.title}</h3>
-                    <p className="news-item__info-date-post">Date post {dateOnly}</p>
-                </div>
-            </button>
-        </li>
+        <div className="news-item__content">
+            <div className='news-item__breadcrumb'>
+                <span>{singleNews?.postingDate ? singleNews?.postingDate : formatDate(new Date())}</span>
+                <div className="news-item__breadcrumb-divider"></div>
+            </div>
+            <h1 className='news-item__title'>{singleNews?.title}</h1>
+            <img
+                loading="lazy"
+                className="news-item__image"
+                src={`https://demo.dotcms.com/dA/${singleNews?.inode}/12000w/1920h`}
+                alt={singleNews?.title || 'News image'}
+            />
+            <h2 className='news-item__description'>{singleNews?.ogDescription}</h2>
+        </div>
     );
-};
-
-export default NewsItem;
+}

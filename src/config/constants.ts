@@ -3,6 +3,7 @@ import {
 	DateRanges,
 	NewsState,
 	NewsSelectedState,
+	PostNewsState,
 } from '../types/interfaces';
 
 export const BASE_URL: string = 'https://demo.dotcms.com/api/content';
@@ -36,4 +37,26 @@ export const selectedNewsInitialState: NewsSelectedState = {
 	isLoading: false,
 	error: null,
 	id: '',
+};
+
+export const initialPostState: PostNewsState = {
+	status: 'idle',
+	error: null,
+};
+
+export const formatDate = (date: Date): string => {
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const day = String(date.getDate()).padStart(2, '0');
+	const hours = String(date.getHours()).padStart(2, '0');
+	const minutes = String(date.getMinutes()).padStart(2, '0');
+
+	return `${year}-${month}-${day} ${hours}:${minutes}`;
+};
+
+export const formatDateNoTime = (date: Date): string => {
+	const year = date.getFullYear();
+	const month = String(date.getMonth() + 1).padStart(2, '0');
+	const day = String(date.getDate()).padStart(2, '0');
+	return `${year}-${month}-${day}`;
 };

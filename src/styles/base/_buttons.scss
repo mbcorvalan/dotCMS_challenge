@@ -45,6 +45,15 @@
             rgba(0, 0, 0, 0.12) 0px 1px 5px 0px;
     }
 
+    &--item-list {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: start;
+        text-transform: none;
+        flex-direction: row;
+    }
+
     &-secondary {
         color: $primary-text-color;
         background-color: $secondary-color;

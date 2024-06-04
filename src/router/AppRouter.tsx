@@ -1,6 +1,6 @@
+import React from 'react';
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
-import MainNotice from '../pages/MainNotice';
-import NotFound from '../pages/NotFound';
+import DashboardMain from '../pages/DashboardMain';
 import DashboardAside from '../pages/DashboardAside';
 
 
@@ -13,8 +13,9 @@ export default function AppRouter(): JSX.Element {
 		<BrowserRouter>
 			<DashboardAside />
 			<Routes>
-				<Route path='/news/:newsId' element={<MainNotice />} />
-				<Route path='' element={<NotFound />} />
+				<Route path='/news/:newsId' element={<DashboardMain />} />
+				<Route path='/' element={<DashboardMain />} />
+				<Route path='/create-news' element={<DashboardMain />} />
 			</Routes>
 		</BrowserRouter>
 	);

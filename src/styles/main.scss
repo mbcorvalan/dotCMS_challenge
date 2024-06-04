@@ -21,10 +21,12 @@
 @import 'components/dashboardMain';
 @import 'components/dashboardAside';
 @import 'components/loading';
-@import 'components/errorMsg';
-@import 'components/newsItem';
+@import 'components/NotificationMsg';
+@import 'components/newsListItem';
 @import 'components/paginationControls';
-@import 'components/CreateButton';
+@import 'components/createButton';
+@import 'components/newsItem';
+@import 'components/createForm';
 
 /**
 // Import page styles
